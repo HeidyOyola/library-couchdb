@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1> Mi Biblioteca Digital</h1>
+      <p>Gestión de libros con Apache CouchDB</p>
+    </header>
+
+    <section class="card">
+      <h2>Registrar libro</h2>
+
+      <form id="bookForm">
+        <input type="text" id="title"
+               placeholder="Título del libro" required>
+
+        <input type="text" id="author"
+               placeholder="Autor" required>
+
+        <input type="text" id="genre"
+               placeholder="Género" required>
+
+        <input type="number" id="year"
+               placeholder="Año de publicación" required>
+
+        <label for="available">Disponibilidad:</label>
+        <select id="available">
+          <option value="true">Disponible</option>
+          <option value="false">Prestado</option>
+        </select>
+
+        <button type="submit" id="saveButton">
+          Guardar libro
+        </button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Libros registrados</h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Género</th>
+              <th>Año</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="bookList">
+            <tr>
+              <td colspan="6">Cargando libros...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p id="message" role="status"></p>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
